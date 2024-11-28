@@ -1,11 +1,26 @@
-# pytorch-cppcuda-tutorial
-tutorial for writing custom pytorch cpp+cuda kernel, applied on volume rendering (NeRF)
+# pytorch-cuda-template
 
-tutorial playlist: https://www.youtube.com/watch?v=l_Rpk6CRJYI&list=PLDV2CyUo4q-LKuiNltBqCKdO9GH4SS_ec&ab_channel=AI%E8%91%B5
+This repository contains simple pytorch+CUDA template.
 
+## File hierarchy.
 
-CUDA explanation in video 2: https://nyu-cds.github.io/python-gpu/02-cuda/
+- `function/*.py`: define your custom torch function.
+- `src/main.cpp`: torch -> cpu
+- `src/*.cu`: cpu -> cuda/kernel
+- `test.py`: debug your implementation.
 
-C++ API in video 3: https://pytorch.org/cppdocs/
+```
+${root_dir}
+├── function
+│   └── trilinear_interpolation.py
+├── src
+│   ├── main.cpp
+│   ├── forward_kernel.cu
+│   └── backward_kernel.cu
+└── test.py
+```
 
-kernel launching: https://pytorch.org/tutorials/advanced/cpp_extension.html
+## References
+
+Dominantly refer to [pytorch-cppcuda-tutorial](%22https://github.com/kwea123/pytorch-cppcuda-tutorial%22). <br>
+You can also refer to this nice tutorial, [pytorch-custom-cuda-tutorial](https://github.com/chrischoy/pytorch-custom-cuda-tutorial?tab=readme-ov-file).

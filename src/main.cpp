@@ -1,4 +1,7 @@
+#include "main.h"
 #include "utils.h"
+#include "forward_kernel.h"
+#include "backward_kernel.h"
 
 
 torch::Tensor trilinear_interpolation_fw(
