@@ -1,31 +1,31 @@
 import os
 from glob import glob
 
-from setuptools import setup
+from setuptools import find_packages, setup
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 
+library_name = "cppcuda_tutorial"
+
 setup(
-    name="cppcuda_tutorial",
-    version="1.0",
+    name=library_name,
+    version="1.0.0",
     author="jaesungchoe",
     author_email="jchoe@nvidia.com",
-    description="cppcuda_tutorial",
-    long_description="cppcuda_tutorial",
+    packages=find_packages(),
     ext_modules=[
         CUDAExtension(
-            name="cppcuda_tutorial",
+            name=f"{library_name}._C",
             sources=[
-                "src/main.cpp",
-                "src/forward_kernel.cu",
-                "src/backward_kernel.cu",
+                f"{library_name}/csrc/main.cpp",
+                f"{library_name}/csrc/cuda/forward_kernel.cu",
+                f"{library_name}/csrc/cuda/backward_kernel.cu",
             ],
-            # sources=sources,
-            # include_dirs=include_dirs,
             extra_compile_args={
                 "cxx": ["-O2"],
                 "nvcc": ["-O2"],
             },
         )
     ],
+    install_requires=["torch"],
     cmdclass={"build_ext": BuildExtension},
 )
