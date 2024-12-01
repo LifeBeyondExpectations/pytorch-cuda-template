@@ -2,7 +2,7 @@ import time
 
 import torch
 
-from function import Trilinear_interpolation_cuda
+from cppcuda_tutorial import Trilinear_interpolation_cuda
 
 
 def trilinear_interpolation_py(feats, points):
