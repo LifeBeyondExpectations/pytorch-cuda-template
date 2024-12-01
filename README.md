@@ -14,6 +14,15 @@ python setup.py install
 python test_extension/test.py
 ```
 
+## Import
+
+```
+from cppcuda_tutorial import Trilinear_interpolation_cuda
+out_cuda = Trilinear_interpolation_cuda.apply(
+    feats2, points
+)
+```
+
 ## File hierarchy.
 
 - `function.py`: define your custom torch function to be imported.
