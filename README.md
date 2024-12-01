@@ -22,5 +22,5 @@ ${root_dir}
 
 ## References
 
-Dominantly refer to [pytorch-cppcuda-tutorial](https://github.com/kwea123/pytorch-cppcuda-tutorial%22). <br>
+Dominantly refer to [pytorch-cppcuda-tutorial](https://github.com/kwea123/pytorch-cppcuda-tutorial). <br>
 You can also refer to this nice tutorial, [pytorch-custom-cuda-tutorial](https://github.com/chrischoy/pytorch-custom-cuda-tutorial?tab=readme-ov-file).
